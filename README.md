@@ -1,7 +1,7 @@
 # Bulutfon BFXM Mesai Saatleri Düzenleme
-Bulutfon kullanıcılarının BFXM ile mesai saatleri ve öğlen arası düzenlemelerine olanak sağlar.
+[Bulutfon] kullanıcılarının [BFXM] ile mesai saatleri ve öğlen arası düzenlemelerine olanak sağlar.
 ## Uygulama Nasıl Çalışır
-Uygulama sabitler.php dosyası içerisinden aldığı değerlere göre index.php içerisinden üç farklı menüye yönlendirme yapar. Bunlar mesai saatleri, dışı ve öğlen aralarıdır. Uygulama kullanıcıların özel günlerine göre ayarlanabilir.
+Uygulama constants.php dosyası içerisinden aldığı değerlere göre index.php içerisinden üç farklı menüye yönlendirme yapar. Bunlar mesai saatleri, dışı ve öğlen aralarıdır. Uygulama kullanıcıların özel günlerine göre ayarlanabilir.
 Saat ayarlama
 ```sh
 #Mesai saatleri
@@ -73,3 +73,5 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+[Bulutfon]:https://www.bulutfon.com/
+[BFXM]:https://github.com/bulutfon/documents/tree/master/BFXM
