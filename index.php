@@ -1,37 +1,58 @@
 <?php
 
 require_once 'vendor/autoload.php';
-require_once 'sabitler.php';
+require_once 'constants.php';
 
 use Xuma\Bfxm\Builder;
 
 date_default_timezone_set('Europe/Istanbul'); //Turkiye saati
-$gun = date('N'); //Suanki gun degeri
-$saat = date('H:i'); //Suanki saat degeri
+$day_now = date('N'); //Suanki gun degeri
+$hour_now = date('H:i'); //Suanki saat degeri
 
-if($saat < $gunler[$gun]['sabah_baslangic'] || $saat > $gunler[$gun]['ogle_bitis'] ){
+//if($hour < $days[$day]['morning_start'] || $hour > $days[$day]['afternoon_finish'] ){
+//
+//    //Mesai saatleri disi
+//
+//
+//
+//
+//}elseif($hour > $days[$day]['morning_finish'] && $hour < $days[$day]['afternoon_start'] ){
+//
+//    //Oglen arasi
+//
+//    $bfxm = new Builder();
+//    $bfxm->dial($launch_break)
+//        ->build(true);
+//
+//}else{
+//
+//    //Mesai saatleri
+//
+//    $bfxm = new Builder();
+//    $bfxm->dial($shift_in)
+//        ->build(true);
+//
+//}
 
+switch($hour_now){
     //Mesai saatleri disi
-
-    $bfxm = new Builder();
-    $bfxm->dial($mesai_disi)
-        ->build(true);
-
-
-}elseif($saat > $gunler[$gun]['sabah_bitis'] && $saat < $gunler[$gun]['ogle_baslangic'] ){
+    case ($hour_now < $days[$day_now]['morning_start'] || $hour_now > $days[$day_now]['afternoon_finish'] ):
+        $bfxm = new Builder();
+        $bfxm->dial($shift_out)
+            ->build(true);
+        break;
 
     //Oglen arasi
-
-    $bfxm = new Builder();
-    $bfxm->dial($oglen_arasi)
-        ->build(true);
-
-}else{
+    case ($hour_now > $days[$day_now]['morning_finish'] && $hour_now < $days[$day_now]['afternoon_start'] ):
+        $bfxm = new Builder();
+        $bfxm->dial($launch_break)
+            ->build(true);
+        break;
 
     //Mesai saatleri
-
-    $bfxm = new Builder();
-    $bfxm->dial($mesai_saatleri)
-        ->build(true);
-
+    default:
+        $bfxm = new Builder();
+        $bfxm->dial($shift_in)
+            ->build(true);
+        break;
 }
